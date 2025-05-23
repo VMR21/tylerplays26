@@ -4,17 +4,22 @@
   max-width: 70vw;
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
-  background-image: url("/assets/image.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  overflow-x: hidden; /* block horizontal scroll only */
 }
+
+body {
+  background-image: url("/assets/image.png"); /* make sure this path is correct */
+  background-size: cover;       /* Fill the screen */
+  background-repeat: no-repeat; /* Don't repeat */
+  background-position: center;  /* Center the image */
+  background-attachment: fixed; /* Optional: keeps background fixed on scroll */
+}
+
 
 .glow-container {
   position: fixed;
