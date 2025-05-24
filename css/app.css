@@ -19,6 +19,7 @@ body {
   background-position: center;  /* Center the image */
   background-attachment: fixed; /* Optional: keeps background fixed on scroll */
 }
+
 body::before {
   content: "";
   position: fixed;
