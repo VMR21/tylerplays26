@@ -30,7 +30,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.35); /* Adjust opacity as needed */
+  background: rgba(0, 0, 0, 0); /* Adjust opacity as needed */
   z-index: 0;
   pointer-events: none;
 }
