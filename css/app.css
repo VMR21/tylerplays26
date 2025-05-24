@@ -8,8 +8,9 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   overflow-x: hidden;
+  position: relative;
 }
 
 body {
@@ -22,25 +23,24 @@ body {
   z-index: 0;
 }
 
-/* Overlay that covers entire scrollable page */
+/* Full-page dark overlay that scrolls with the content */
 body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0); /* Adjust opacity as needed */
-  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35); /* darkness level */
+  z-index: -1;
   pointer-events: none;
 }
 
-/* All content stays above overlay */
+/* Content stays above overlay */
 body * {
   position: relative;
   z-index: 1;
 }
-
 
 
 .glow-container {
