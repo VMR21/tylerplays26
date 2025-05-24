@@ -17,29 +17,30 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: scroll; /* important for mobile + scroll issues */
+  background-attachment: scroll;
   position: relative;
   z-index: 0;
 }
 
-/* FIX: make overlay scroll with content instead of fixed */
+/* Overlay that covers entire scrollable page */
 body::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* overlay darkness */
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35); /* Adjust opacity as needed */
   z-index: 0;
   pointer-events: none;
 }
 
-/* make sure all page content is above overlay */
+/* All content stays above overlay */
 body * {
   position: relative;
   z-index: 1;
 }
+
 
 
 .glow-container {
