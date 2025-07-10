@@ -441,18 +441,19 @@
 <script>
 const API_URL = 'https://typlerplaysdata.onrender.com/leaderboard/top14';
 const roobetLogo = '/assets/rainbetlogo.png';
-const rewards = [500, 1000, 250, 125, 125, 125, 125, 125, 125, 125];
+const rewards = [800, 2000, 500, 350, 300, 250, 250, 200, 200, 150];
 const top3Glows = ['0 0 40px #C0C0C0', '0 0 40px #FFD700', '0 0 40px #CD7F32'];
 
 function updateCountdown() {
   const el = document.getElementById("countdown");
   const now = new Date();
 
-  // Determine next 11th UTC 00:00
+  // Determine next 1st of the month UTC 00:00
   let targetMonth = now.getUTCMonth();
   let targetYear = now.getUTCFullYear();
 
-  if (now.getUTCDate() >= 11) {
+  // If it's already the 1st or later, set the target to the 1st of next month
+  if (now.getUTCDate() >= 1) {
     targetMonth += 1;
     if (targetMonth > 11) {
       targetMonth = 0;
@@ -460,7 +461,7 @@ function updateCountdown() {
     }
   }
 
-  const target = new Date(Date.UTC(targetYear, targetMonth, 11, 0, 0, 0));
+  const target = new Date(Date.UTC(targetYear, targetMonth, 1, 0, 0, 0));
   const diff = target - now;
 
   if (diff <= 0) {
@@ -478,6 +479,7 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
 
 
 async function loadLeaderboard() {
